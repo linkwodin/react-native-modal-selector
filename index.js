@@ -16,7 +16,8 @@ import {
 
 import styles from './style';
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
+const ViewPropTypes = RNViewPropTypes || View.propTypes || {};
+const TextTypes = Text.propTypes || {};
 
 let componentIndex = 0;
 
@@ -34,21 +35,21 @@ const propTypes = {
     animationType:                  PropTypes.oneOf(['none', 'slide', 'fade']),
     style:                          ViewPropTypes.style,
     selectStyle:                    ViewPropTypes.style,
-    selectTextStyle:                Text.propTypes.style,
+    selectTextStyle:                TextTypes.style,
     optionStyle:                    ViewPropTypes.style,
-    optionTextStyle:                Text.propTypes.style,
+    optionTextStyle:                TextTypes.style,
     optionContainerStyle:           ViewPropTypes.style,
     sectionStyle:                   ViewPropTypes.style,
     childrenContainerStyle:         ViewPropTypes.style,
     touchableStyle:                 ViewPropTypes.style,
     touchableActiveOpacity:         PropTypes.number,
-    sectionTextStyle:               Text.propTypes.style,
-    selectedItemTextStyle:          Text.propTypes.style,
+    sectionTextStyle:               TextTypes.style,
+    selectedItemTextStyle:          TextTypes.style,
     cancelContainerStyle:           ViewPropTypes.style,
     cancelStyle:                    ViewPropTypes.style,
-    cancelTextStyle:                Text.propTypes.style,
+    cancelTextStyle:                TextTypes.style,
     overlayStyle:                   ViewPropTypes.style,
-    initValueTextStyle:             Text.propTypes.style,
+    initValueTextStyle:             TextTypes.style,
     cancelText:                     PropTypes.string,
     disabled:                       PropTypes.bool,
     supportedOrientations:          PropTypes.arrayOf(
@@ -80,6 +81,7 @@ const propTypes = {
     enableLongPress:                PropTypes.bool,
     optionsTestIDPrefix:            PropTypes.string,
 };
+
 
 const defaultProps = {
     data:                           [],
